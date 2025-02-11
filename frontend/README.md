@@ -1,0 +1,1 @@
+Frontend for Sudoku solver
