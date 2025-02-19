@@ -1,6 +1,6 @@
 import React from "react"
 
-export default function SudokuCell({ value, onChange, rowIndex, colIndex }) {
+export default function SudokuCell({ value, onChange, rowIndex, colIndex, isUserEntered}) {
   const handleKeyDown = (e) => {
     const keysMap = {
       'ArrowRight': [0, 1],
@@ -60,7 +60,8 @@ export default function SudokuCell({ value, onChange, rowIndex, colIndex }) {
       className={`w-10 h-10 sm:w-12 sm:h-12 text-center text-lg sm:text-xl ${borderClasses} border-gray-300 
         focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-0 focus:border-transparent
         focus:relative focus:z-10 
-        transition-all duration-300 ease-in-out`}
+        transition-all duration-300 ease-in-out
+        ${isUserEntered ? 'text-black font-normal' : 'text-blue-600 font-normal'}`}
       maxLength={1}
     />
   )
